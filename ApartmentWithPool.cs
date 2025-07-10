@@ -1,6 +1,7 @@
 using System;
-using House;
-namespace ApartamentWithPool;
+
+
+namespace House;
 
 public record ApartmentWithPool(int Floor, float Area) : ApartmentWithWindows(Floor, Area)
 {
