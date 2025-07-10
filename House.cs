@@ -2,7 +2,7 @@ using System;
 
 namespace House;
 
-public class House(List<Apartment> Apartments, int Floors)
+public class House(int Floors, List<Apartment> Apartments)
 {
 
     public int TopPrice { get; }
@@ -11,6 +11,7 @@ public class House(List<Apartment> Apartments, int Floors)
 
     public List<Apartment> ValidApartments(List<Apartment> apartments)
     {
+        //todo: need implementation
         return null;
     }
 
