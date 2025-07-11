@@ -6,8 +6,5 @@ public class ApartmentWithWindows(int Floor, double Area) : Apartment(Floor, Are
 {
     public bool HasWindows { get; } = true;
 
-    public override string ToString()
-    {
-        return base.ToString();
-    }
+
 };

@@ -9,8 +9,5 @@ public class ApartmentWithGarden : ApartmentWithWindows
     {
         Price += 2e+4;
     }
-    public override string ToString()
-    {
-        return base.ToString();
-    }
+
 };

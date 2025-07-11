@@ -41,7 +41,7 @@ public static class HouseUtils
             if (IsValid)
             {
                 apartments.Add(apt);
-                Console.WriteLine($"Price for {apt.GetType()} is ${apt}");
+                Console.WriteLine($"Price for {apt.GetType()} is ${apt.Price}");
             }
             else if (ErrorMessage != null)
             {

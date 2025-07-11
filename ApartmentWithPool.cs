@@ -11,8 +11,5 @@ public class ApartmentWithPool : ApartmentWithWindows
     {
         Price += 3e+4;
     }
-    public override string ToString()
-    {
-        return base.ToString();
-    }
+
 };
