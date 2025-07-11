@@ -6,7 +6,16 @@ public class House(int Floors, List<Apartment> Apartments)
 {
   public int Floors { get; init; } = Floors;
   public List<Apartment> Apartments { get; init; } = Apartments ?? [];
-  public int TopPrice { get; }
+  // public int TopPrice;
+  public static double GetTopPrice(List<Apartment> apartments)
+  {
+    double maxPrice = apartments[0].Price;
+    foreach (var apt in apartments)
+    {
+      maxPrice = apt.Price > maxPrice ? apt.Price : maxPrice;
+    }
+    return maxPrice;
+  }
 
   //   public List<Apartment> ValidApartments(List<Apartment> apartments)
   //   {

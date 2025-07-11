@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using static System.Console;
 using static House.HouseUtils;
 
 namespace House;
@@ -13,22 +13,23 @@ class HouseProgram
         var house = new House(totalFloors, new List<Apartment>());
         var (apartments, errors) = GenerateRandomApartments(totalFloors, house);
 
-        Console.WriteLine($"House with {house.Floors} floors:");
-        Console.WriteLine($"Generated {apartments.Count} valid apartments:");
-        
+        WriteLine($"House with {house.Floors} floors:");
+        WriteLine($"Generated {apartments.Count} valid apartments:");
+
         foreach (var apt in apartments)
-            Console.WriteLine(apt);
+            WriteLine(apt);
 
         if (errors.Count != 0)
         {
-            Console.WriteLine("\nValidation Errors:");
+            WriteLine("\nValidation Errors:");
             foreach (var error in errors)
-                Console.WriteLine(error);
+                WriteLine(error);
         }
         else
         {
-            Console.WriteLine("\nNo validation errors.");
+            WriteLine("\nNo validation errors.");
         }
+        
     }
 
 
