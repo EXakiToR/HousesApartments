@@ -1,6 +1,6 @@
 using System;
 
-namespace House;
+namespace HousesApartments.Models;
 
 public class Apartment(int Floor, double Area)
 {

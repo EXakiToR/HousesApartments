@@ -1,7 +1,7 @@
 using System;
 
 
-namespace House;
+namespace HousesApartments.Models;
 
 public class ApartmentWithPool : ApartmentWithWindows
 {

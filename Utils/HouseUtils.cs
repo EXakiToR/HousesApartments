@@ -1,6 +1,7 @@
 using System;
+using HousesApartments.Models;
 
-namespace House;
+namespace HousesApartments.Utils;
 
 public static class HouseUtils
 {

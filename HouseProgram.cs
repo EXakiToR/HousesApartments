@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using HousesApartments.Models;
+using HousesApartments.Utils;
 using static System.Console;
-using static House.HouseUtils;
+// using static House.HouseUtils;
 
-namespace House;
+namespace HousesApartments;
 
 class HouseProgram
 {
     public static void Main(string[] args)
     {
         int totalFloors = 20;
-        var (apartments, errors) = GenerateRandomApartments(totalFloors, totalFloors);
+        var (apartments, errors) = HouseUtils.GenerateRandomApartments(totalFloors, totalFloors);
         var house = new House(totalFloors, apartments);
 
         WriteLine($"House with {house.Floors} floors:");
