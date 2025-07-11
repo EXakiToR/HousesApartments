@@ -2,7 +2,15 @@ using System;
 
 namespace House;
 
-public record ApartmentWithGarden(int Floor, float Area) : ApartmentWithWindows(Floor, Area)
+public class ApartmentWithGarden : ApartmentWithWindows
 {
     public bool HasGarden { get; } = true;
+    public ApartmentWithGarden(int floor, double area) : base(floor, area)
+    {
+        Price += 2e+4;
+    }
+    public override string ToString()
+    {
+        return base.ToString();
+    }
 };

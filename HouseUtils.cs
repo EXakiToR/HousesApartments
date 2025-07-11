@@ -25,7 +25,7 @@ public static class HouseUtils
         for (int i = 0; i < count; i++)
         {
             int floor = random.Next(1, house.Floors + 1); // Random floor 1 to totalFloors
-            float area = (float)Math.Round(random.Next(30, 151) + random.NextDouble(), 2); // 30.0-150.99 m²
+            double area = Math.Round(random.Next(30, 151) + random.NextDouble(), 2); // 30.0-150.99 m²
             int type = random.Next(0, 4); // Randomly pick any type
 
             Apartment apt = type switch
@@ -41,6 +41,7 @@ public static class HouseUtils
             if (IsValid)
             {
                 apartments.Add(apt);
+                Console.WriteLine($"Price for {apt.GetType()} is ${apt}");
             }
             else if (ErrorMessage != null)
             {
@@ -50,4 +51,5 @@ public static class HouseUtils
 
         return (apartments, errors);
     }
+    
 }

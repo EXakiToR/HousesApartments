@@ -4,15 +4,13 @@ namespace House;
 
 public class House(int Floors, List<Apartment> Apartments)
 {
+  public int Floors { get; init; } = Floors;
+  public List<Apartment> Apartments { get; init; } = Apartments ?? [];
+  public int TopPrice { get; }
 
-    public int TopPrice { get; }
-    public List<Apartment> Apartments { get; set; } = Apartments;
-    public int Floors { get; set; } = Floors;
-
-    public List<Apartment> ValidApartments(List<Apartment> apartments)
-    {
-        //todo: need implementation
-        return null;
-    }
-
-};
+  //   public List<Apartment> ValidApartments(List<Apartment> apartments)
+  //   {
+  //       // TODO: Need implementation
+  //       return null;
+  //   }
+}
