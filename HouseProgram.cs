@@ -29,7 +29,7 @@ class HouseProgram
         {
             WriteLine("\nNo validation errors.");
         }
-        
+        WriteLine($"Top price of apartment: ${House.GetTopPrice(apartments)}");
     }
 
 
