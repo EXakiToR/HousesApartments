@@ -11,8 +11,8 @@ class HouseProgram
 {
     public static void Main(string[] args)
     {
-        int totalFloors = 20;
-        var (apartments, errors) = HouseUtils.GenerateRandomApartments(totalFloors, totalFloors);
+        int totalFloors = 114;
+        var (apartments, errors) = HouseUtils.GenerateRandomApartments(totalFloors, (int)Math.Round((float)totalFloors / 5, 0));
         var house = new House(totalFloors, apartments);
         var suitableApartments = House.SuitableApartments(apartments);
 
@@ -35,7 +35,7 @@ class HouseProgram
         }
         WriteLine($"Top price of apartment: ${House.GetTopPrice(apartments)}");
 
-        WriteLine("\tSuitable apartments:");
+        WriteLine("\tSuitable apartments with pool or garden (less than $100k):");
 
         foreach (var suitableApt in suitableApartments)
             WriteLine($"{suitableApt} with price ${suitableApt.Price} on floor {suitableApt.Floor}, area {suitableApt.Area}");
