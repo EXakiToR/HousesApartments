@@ -7,27 +7,12 @@ public class House(int Floors, List<Apartment> Apartments)
   public int Floors { get; init; } = Floors;
   public List<Apartment> Apartments { get; init; } = Apartments ?? [];
   // public int TopPrice;
-  public static double GetTopPrice(List<Apartment> apartments)
+  public static double GetTopPrice(List<Apartment> apartments) =>
+    apartments != null ? apartments.Max(apt => apt.Price) : 0;
+
+  public static List<Apartment> SuitableApartments(List<Apartment> apartments)
   {
-    if (apartments != null)
-    {
-      double maxPrice = apartments[0].Price;
-      foreach (var apt in apartments)
-      {
-        maxPrice = apt.Price > maxPrice ? apt.Price : maxPrice;
-      }
-      return maxPrice;
-
-    }
-    else
-    {
-      throw new NullReferenceException("Null apartments");
-    }
+    return [.. apartments.Where(apt => (apt is ApartmentWithGarden || apt is ApartmentWithPool) &&
+    apt.Price <= 5e+4)];
   }
-
-  // public List<Apartment> ValidApartments(List<Apartment> apartments)
-  // {
-
-  //     return List<Apartment> apartments where apartment HasGarden || hasPool && apartments.Price <= 4e+3;
-  // }
 }
