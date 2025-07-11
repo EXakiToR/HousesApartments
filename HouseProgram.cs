@@ -9,7 +9,7 @@ class HouseProgram
 {
     public static void Main(string[] args)
     {
-        int totalFloors = 10; // Example: 10 floors
+        int totalFloors = 20;
         var house = new House(totalFloors, new List<Apartment>());
         var (apartments, errors) = GenerateRandomApartments(totalFloors, house);
 

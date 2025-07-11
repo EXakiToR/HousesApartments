@@ -6,6 +6,6 @@ public class Apartment(int Floor, double Area)
 {
     public int Floor { get; init; } = Floor;
     public double Area { get; init; } = Area;
-    public double Price { get; init; } = Math.Round(2e+4 * Area + (Floor > 1 ? 5e+3 * (Floor - 1) : 0), 2);
+    public double Price { get; init; } = Math.Round(2e+3 * Area + (Floor > 1 ? 5e+3 * (Floor - 1) : 0), 2);
 
 };

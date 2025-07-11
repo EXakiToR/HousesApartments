@@ -25,9 +25,9 @@ public class House(int Floors, List<Apartment> Apartments)
     }
   }
 
-  //   public List<Apartment> ValidApartments(List<Apartment> apartments)
-  //   {
-  //       // TODO: Need implementation
-  //       return null;
-  //   }
+    // public List<Apartment> ValidApartments(List<Apartment> apartments)
+    // {
+        
+    //     return List<Apartment> apartments where apartment HasGarden || hasPool && apartments.Price <= 4e+3;
+    // }
 }
