@@ -9,12 +9,20 @@ public class House(int Floors, List<Apartment> Apartments)
   // public int TopPrice;
   public static double GetTopPrice(List<Apartment> apartments)
   {
-    double maxPrice = apartments[0].Price;
-    foreach (var apt in apartments)
+    if (apartments != null)
     {
-      maxPrice = apt.Price > maxPrice ? apt.Price : maxPrice;
+      double maxPrice = apartments[0].Price;
+      foreach (var apt in apartments)
+      {
+        maxPrice = apt.Price > maxPrice ? apt.Price : maxPrice;
+      }
+      return maxPrice;
+
     }
-    return maxPrice;
+    else
+    {
+      throw new NullReferenceException("Null apartments");
+    }
   }
 
   //   public List<Apartment> ValidApartments(List<Apartment> apartments)
