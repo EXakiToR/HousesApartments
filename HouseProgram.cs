@@ -10,8 +10,8 @@ class HouseProgram
     public static void Main(string[] args)
     {
         int totalFloors = 20;
-        var house = new House(totalFloors, new List<Apartment>());
-        var (apartments, errors) = GenerateRandomApartments(totalFloors, house);
+        var (apartments, errors) = GenerateRandomApartments(totalFloors, totalFloors);
+        var house = new House(totalFloors, apartments);
 
         WriteLine($"House with {house.Floors} floors:");
         WriteLine($"Generated {apartments.Count} valid apartments:");

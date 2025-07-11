@@ -4,19 +4,19 @@ namespace House;
 
 public static class HouseUtils
 {
-    public static (bool IsValid, string? ErrorMessage) ValidateApartment(Apartment apt, House house)
+    public static (bool IsValid, string? ErrorMessage) ValidateApartment(Apartment apt, int floors)
     {
         var unsuccess = (false, $"Error: {apt.GetType()} attempted to be created on floor {apt.Floor}");
         return apt switch
         {
             ApartmentWithGarden _ when apt.Floor != 1 =>
                 unsuccess,
-            ApartmentWithPool _ when apt.Floor != house.Floors =>
+            ApartmentWithPool _ when apt.Floor != floors =>
                 unsuccess,
             _ => (true, null)
         };
     }
-    public static (List<Apartment> Apartments, List<string> Errors) GenerateRandomApartments(int count, House house)
+    public static (List<Apartment> Apartments, List<string> Errors) GenerateRandomApartments(int count, int floors)
     {
         var random = new Random();
         var apartments = new List<Apartment>();
@@ -24,7 +24,7 @@ public static class HouseUtils
 
         for (int i = 0; i < count; i++)
         {
-            int floor = random.Next(1, house.Floors + 1); // Random floor 1 to totalFloors
+            int floor = random.Next(1, floors + 1); // Random floor 1 to totalFloors
             double area = Math.Round(random.Next(10, 30) + random.NextDouble(), 2);
             int type = random.Next(0, 4); // Randomly pick any type
 
@@ -37,7 +37,7 @@ public static class HouseUtils
                 _ => new Apartment(floor, area)
             };
 
-            var (IsValid, ErrorMessage) = ValidateApartment(apt, house);
+            var (IsValid, ErrorMessage) = ValidateApartment(apt, floors);
             if (IsValid)
             {
                 apartments.Add(apt);
