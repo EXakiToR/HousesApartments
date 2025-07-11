@@ -19,7 +19,7 @@ public static class HouseUtils
     public static (List<Apartment> Apartments, List<string> Errors) GenerateRandomApartments(int count, int floors)
     {
         var random = new Random();
-        var apartments = new List<Apartment>();
+        var validApts = new List<Apartment>();
         var errors = new List<string>();
 
         for (int i = 0; i < count; i++)
@@ -40,7 +40,7 @@ public static class HouseUtils
             var (IsValid, ErrorMessage) = ValidateApartment(apt, floors);
             if (IsValid)
             {
-                apartments.Add(apt);
+                validApts.Add(apt);
                 Console.WriteLine($"Price for {apt.GetType()} on floor {apt.Floor} with area {apt.Area} is ${apt.Price}");
             }
             else if (ErrorMessage != null)
@@ -49,7 +49,7 @@ public static class HouseUtils
             }
         }
 
-        return (apartments, errors);
+        return (validApts, errors);
     }
     
 }
