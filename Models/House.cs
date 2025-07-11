@@ -12,7 +12,7 @@ public class House(int Floors, List<Apartment> Apartments)
 
   public static List<Apartment> SuitableApartments(List<Apartment> apartments)
   {
-    return [.. apartments.Where(apt => (apt is ApartmentWithGarden || apt is ApartmentWithPool) &&
-    apt.Price <= 1e+5)];
+    return [.. apartments.Where(apt => apt is ApartmentWithGarden && apt.Price <= 1e+5 || apt is ApartmentWithPool && apt.Price < 2e+5
+    )];
   }
 }
