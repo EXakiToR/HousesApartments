@@ -35,7 +35,7 @@ class HouseProgram
         }
         WriteLine($"Top price of apartment: ${House.GetTopPrice(apartments)}");
 
-        WriteLine("\tSuitable apartments with pool or garden (less than $100k):");
+        WriteLine("\tSuitable apartments with pool (less than 200k) or garden (less than $100k):");
 
         foreach (var suitableApt in suitableApartments)
             WriteLine($"{suitableApt} with price ${suitableApt.Price} on floor {suitableApt.Floor}, area {suitableApt.Area}");
